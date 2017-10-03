@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+body {
+    font: 12px/18px Arial, sans-serif;
+    width: 100%;
+    background: #F5F5F5;
+}
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+}
+    .header .url_container, .header .link_container{
+        width: 600px;
+        height:50px;
+        margin: 50px auto 10px;
+        padding: 0 10px;
+        background: #FFF;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+        .header .url_container .label, .header .link_container .new_link, .header .link_container .label{
+            float:left;
+            line-height: 50px;
+            color:#DDDDDD;
+            font-size: 30px;
+            margin-right:10px;
+        }
+        .header .url_container .url_input, .header .link_container .code {
+            display:block;
+            float:left;
+            outline: none;
+            border: 0;
+            font-size:30px;
+            height:45px;
+            margin-bottom:5px;
+            width:445px;
+        }
+        .header .url_container img, .header .link_container img{
+            display:block;
+            float:right;
+            height:40px;
+            margin:5px 0;
+            cursor: pointer;
+        }
+
+    .header .link_container{
+        display:none;
+    }
+
+        .header .link_container .new_link{
+            color:#000;
+            cursor:pointer;
+        }
+
+        .header .link_container .label{
+            margin-right:2px;
+            color:#DDDDDD;
+            display:none;
+        }
+        .header .link_container .code{
+            height:47px;
+            margin-bottom:3px;
+            width:260px;
+            display:none;
+        }
+
+    /* Middle
+    -----------------------------------------------------------------------------*/
+.content {
+}
