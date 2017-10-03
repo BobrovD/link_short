@@ -11,10 +11,11 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/php/require.php';
 
-if($_SERVER['REQUEST_URI'] !== '/'){
+if($_SERVER['REQUEST_URI'] !== '/')
+{
     $code = substr($_SERVER['REQUEST_URI'], 1);
-    if($url = get_url($code)){
-        if(strpos($url, 'http') === false)
+    if ($url = getUrl($code)) {
+        if (strpos($url, 'http') === false)
             $url = 'http://'.$url;
         $headers['Location'] = $url;
         exit_with_code(302, $headers);

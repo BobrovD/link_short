@@ -8,7 +8,8 @@
 
 namespace Defines\MySQL;
 
-class Connection {
+class Connection
+{
     const DATABASE = 'dbls';
     const SERVER = 'localhost';
     const USER = 'root';

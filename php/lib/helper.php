@@ -8,8 +8,9 @@
 
 
 
-function exit_with_code($code, $headers = false){
-    if(is_array($headers)) {
+function exit_with_code($code, $headers = false)
+{
+    if (is_array($headers)) {
         foreach ($headers as $key => $header) {
             header($key . ': ' . $header);
         }

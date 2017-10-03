@@ -8,18 +8,19 @@
 
 
 namespace Lib\DB;
+
 use Defines;
 
 $connection = null;
 
 function query($query)
 {
-    $connection = get_connection();
+    $connection = getConnection();
     return mysqli_query($connection, $query);
 }
 
 //associative result
-function query_ass($query, $result_type = MYSQLI_ASSOC)
+function queryAss($query, $result_type = MYSQLI_ASSOC)
 {
     $mysqli_result = query($query);
     $result = [];
@@ -29,27 +30,26 @@ function query_ass($query, $result_type = MYSQLI_ASSOC)
     return $result;
 }
 
-function query_ass_row($query, $result_type = MYSQLI_ASSOC)
+function queryAssRow($query, $result_type = MYSQLI_ASSOC)
 {
-    return query_ass($query, $result_type)[0];
+    return queryAss($query, $result_type)[0];
 }
 
-function query_ass_one($query)
+function queryAssOne($query)
 {
-    return query_ass_row($query, $result_type = MYSQLI_NUM)[0];
+    return queryAssRow($query, $result_type = MYSQLI_NUM)[0];
 }
 
-function last_insert_id()
+function lastInsertId()
 {
-    return mysqli_insert_id(get_connection());
+    return mysqli_insert_id(getConnection());
 }
 
-function get_connection()
+function getConnection()
 {
     global $connection;
     //если соединение не установлено
-    if($connection === null)
-    {
+    if ($connection === null) {
         //то коннектимся к базе и записываем в $connections
         $connection = connect();
     }
@@ -59,13 +59,18 @@ function get_connection()
 //подключимся к master серверу, а если он лежит, то к slave
 function connect()
 {
-    $connection = mysqli_connect(Defines\MySQL\Connection::SERVER, Defines\MySQL\Connection::USER, Defines\MySQL\Connection::PASSWORD, Defines\MySQL\Connection::DATABASE);
+	$connection = mysqli_connect(
+        Defines\MySQL\Connection::SERVER,
+        Defines\MySQL\Connection::USER,
+        Defines\MySQL\Connection::PASSWORD,
+        Defines\MySQL\Connection::DATABASE
+    );
     mysqli_set_charset($connection, 'utf8');
     return $connection;
 }
 
 //чистим за собой
-function close_connections()
+function closeConnections()
 {
     global $connection;
     mysqli_close($connection);
