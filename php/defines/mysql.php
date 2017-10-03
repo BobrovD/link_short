@@ -10,8 +10,8 @@ namespace Defines\MySQL;
 
 class Connection
 {
-    const DATABASE = 'dbls';
-    const SERVER = 'localhost';
-    const USER = 'root';
-    const PASSWORD = 'HHu0WNCcB4in';
+    const DATABASE  = 'dbls';
+    const SERVER    = 'localhost';
+    const USER      = 'root';
+    const PASSWORD  = 'HHu0WNCcB4in';
 }
