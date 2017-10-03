@@ -6,6 +6,8 @@
  * Time: 11:17
  */
 
+use Lib\DB as MySQL;
+
 function get_url($code)
 {
     $query = 'SELECT url FROM ls WHERE code = \''.$code.'\'';

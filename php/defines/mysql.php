@@ -6,13 +6,11 @@
  * Time: 11:00
  */
 
-namespace defines;
+namespace Defines\MySQL;
 
-class MySQL {
-    const CONNECTION = [
-        'database' => 'dbls',
-        'server' => 'localhost',
-        'user' => 'root',
-        'password' => 'HHu0WNCcB4in'
-    ];
+class Connection {
+    const DATABASE = 'dbls';
+    const SERVER = 'localhost';
+    const USER = 'root';
+    const PASSWORD = 'HHu0WNCcB4in';
 }

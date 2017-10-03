@@ -6,8 +6,9 @@
  * Time: 11:05
  */
 
-namespace MySQL;
-use defines;
+
+namespace Lib\DB;
+use Defines;
 
 $connection = null;
 
@@ -58,8 +59,7 @@ function get_connection()
 //подключимся к master серверу, а если он лежит, то к slave
 function connect()
 {
-    $connection = mysqli_connect(defines\MySQL::CONNECTION['server'], defines\MySQL::CONNECTION['user'],
-        defines\MySQL::CONNECTION['password'], defines\MySQL::CONNECTION['database']);
+    $connection = mysqli_connect(Defines\MySQL\Connection::SERVER, Defines\MySQL\Connection::USER, Defines\MySQL\Connection::PASSWORD, Defines\MySQL\Connection::DATABASE);
     mysqli_set_charset($connection, 'utf8');
     return $connection;
 }

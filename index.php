@@ -5,6 +5,9 @@
  * Date: 03.10.17
  * Time: 10:57
  */
+//error_reporting(E_ALL | E_STRICT);   // включаем замечания у кого они выключены
+//ini_set('display_errors','On');		// ну уж что бы точно вы увидели результат
+
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/php/require.php';
 
