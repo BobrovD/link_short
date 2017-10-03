@@ -9,7 +9,7 @@ let validate = (type, val) => {
             re = /((?:http|https):\/\/)?((?:[\w-]+)(?:\.[\w-]+)+)(?:[\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/;
         break;
         case 'code':
-            re = /^[a-zA-Z0-9]{5,}$/;
+            re = /^[a-zA-Z0-9]{5,100}$/;
         break;
         default:
             return false;

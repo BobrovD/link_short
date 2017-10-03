@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_URI'] !== '/')
         if (strpos($url, 'http') === false)
             $url = 'http://'.$url;
         $headers['Location'] = $url;
-        exit_with_code(302, $headers);
+        exitWithCode(302, $headers);
     }
 }
 

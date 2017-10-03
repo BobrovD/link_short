@@ -8,7 +8,7 @@
 
 
 
-function exit_with_code($code, $headers = false)
+function exitWithCode($code, $headers = false)
 {
     if (is_array($headers)) {
         foreach ($headers as $key => $header) {
@@ -17,4 +17,22 @@ function exit_with_code($code, $headers = false)
     }
     http_response_code($code);
     exit();
+}
+
+
+function validateInputData($type, $data)
+{
+	$pattern = '/^$/';
+	switch($type) {
+		case 'url' :
+			$pattern = '/^((?:http|https):\/\/)?((?:[\w-]+)(?:\.[\w-]+)+)(?:[\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?$/u';
+			break;
+		case 'code':
+			$pattern = '/^[a-zA-Z0-9]{5,100}$/u';
+			break;
+		case 'int' :
+			//или строка с INT или INT
+			return (ctype_digit($data) || ((int)$data == $data));
+	}
+	return preg_match($pattern, $data);
 }
